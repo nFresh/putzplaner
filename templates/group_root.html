@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{% block Title %} {{group.name}} {% endblock %}
+{% block Content %}
+<h1>Group {{group.name}}</h1><br>
+Members: {% for name in group.members %} {{name}} {% endfor %}<br>
+
+<br>
+<div id="group-table">
+<table>
+{%if calendar%}
+	{% for c in calendar%}
+		<tr class="tablecolumn">
+		<td> {{c.datetime.strftime('%d.%m.%Y')}}</td><td>{{c.task}}</td><td>{{tasks[c.task]}}<td>{{c.person}}</td><td>{{c.status}}</td><td><a href="/group/{{group.name}}?modstatus={{c.task+c.datetime.strftime('%d%m%Y')}}">Finished</a></td>
+		</tr>
+	{% endfor %}
+{%endif%}
+</table></div><br>
+<a href="/group/{{group.name}}/history">Group History</a><br>
+<a href="/group/{{group.name}}/tasks">Edit Tasks</a><br>
+<a href="/group/{{group.name}}/admin">Modify User-rights</a><br>
+<div class="shoutbox">
+	<div class="shoutbox-content">
+		{% for comment in comments %}
+		<div class = "shoutbox-text{% if loop.index % 2 == 1 %}-uneven{%endif%}">
+			{{comment['text']}}<br>
+			<div class = "shoutbox-name">{{comment['datetime'] | commentdatetime}} ago---{{comment['source']}}<br></div>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="shoutbox-input">	
+		<form method="post">
+			<input type="text" name="comment"/>
+			<input type="submit">
+		
+		</form>
+	</div>
+
+</div>
+{% endblock %}

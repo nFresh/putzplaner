@@ -1,0 +1,30 @@
+
+Important:
+
+Calendar Table Design rework
+Task edit pages Rework
+Better Site Navigation
+Forum?
+PM-System
+User Settings
+New + better Test Cases
+
+Fixes:
+
+Nice-To-Have:
+Task edit - option for relative/absolute intervall (relative counts intervall from todays date when finished, absolute from the original date of the task)
+Admin Console - needs more work -> promote other users to admin
+bug report system
+Polish home a bit
+
+
+more or less done:
+Rework welcome/home page with News blog system
+More Flexible regexp for groups and Tasks
+
+Done:
+Task edit - first User to do it (or random) : default should be the creator or next in line if not a new task
+
+
+
+

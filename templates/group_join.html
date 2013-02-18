@@ -1,0 +1,10 @@
+{% extends "base.html"%}
+{% block Title %} Join Group{% endblock %}
+{% block Content %}
+<div class="error">{{msg}}</div>
+{% for group in groups %}
+	{% if group.name != "#root" %}
+	<a href="/joingroup?join={{group.name}}">{{group.name}}</a><br>
+	{%endif%}
+{% endfor %}
+{% endblock %}

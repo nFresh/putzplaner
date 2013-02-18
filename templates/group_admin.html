@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+{% block Title %} {{group.name}} {% endblock %}
+{% block Content %}
+<h1>Group {{group.name}} Admin panel</h1><br>
+{% if members %}
+{% for m in members %}
+<a href="/group/{{group.name}}/admin?moduser={{m}}">{{m}}</a><br>
+
+{% endfor %}
+<br>
+{%endif%}
+<br>
+{% if requests %}
+Join Requests:<br>
+{% for r in requests %}
+{{r}} --- {{requests[r]}}<br>
+<a href="/group/{{group.name}}/admin?acceptuser={{r}}">Accept Request</a>
+{% endfor %} 
+{% endif %}
+{% endblock %}

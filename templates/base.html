@@ -1,0 +1,42 @@
+<!Doctype HTML>
+<html>
+<head>
+{% block Head %}
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css" />	
+	<title>{% block Title %} {% endblock %} - Putzplaner</title>
+{% endblock %}
+</head>
+<body>
+
+<div id="header">
+{% block Header %}
+	<div class="title"><a href="/"><img class="title" src="/static/pictures/liftarn_Cleaning_tools.png" ></a> <h1> Putzplaner </h1></div>
+	<div class="Header-User-Area">
+	{% block loginlogout %}
+	{% if user == None or user.key == None %} 
+		<a href="/login">Login</a>/<a href="/signup">Signup</a>
+	{% else %}
+		{{user.name}} - [settings]<a href="/logout">[Logout]</a><br>
+		<div class = "Header-Groups">
+			{% for group in user.groups %}
+			[<a href ="/group/{{group}}">{{group}}</a> ]
+			{% endfor %}
+		</div>
+		<div class="Header-Join"><a href = "/newgroup"> [Create new group]</a> <a href="/joingroup"> [Join existing Group]</a></div>
+		
+	{% endif %}
+	{%endblock%}
+	</div>
+{%endblock%}
+</div>
+<div id="content">{% block Content %}<h2> TEST</h2>{% endblock %}
+
+	<div id="footer">
+		{% block Footer %}
+			&copy; Copyright 2013 by Nils Frisch
+		{% endblock %}
+	</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block Title %} {{group.name}} {% endblock %}
+{% block Content %}
+<h1>Group {{group.name}} Admin panel</h1><br>
+
+<ul>{{modusername}}</ul><br>
+<form method="POST">
+{% for m in modrights %}
+<label>{{m}}<input type="radio" name="{{m}}" value="True" {% if modrights[m] %} checked {% endif %}></label><label>  <input type="radio" name="{{m}}" value="False" {% if not modrights[m] %} checked {% endif %}></label><br>
+{% endfor %}
+<input type="submit">
+<br>
+{% endblock %}

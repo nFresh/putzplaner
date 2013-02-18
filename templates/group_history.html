@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% block Title %} {{group.name}} {% endblock %}
+{% block Content %}
+<h1>Group {{group.name}}</h1><br>
+Members: {% for name in group.members %} {{name}} {% endfor %}<br>
+<a href="/group/{{group.name}}/tasks">Edit Tasks</a><br>
+<br>
+<table>
+{% for c in calendar %}
+	{% if c.status != "Active"  %}
+	<tr>
+	<td> {{c.datetime.strftime('%d.%m.%Y')}}</td><td>{{c.task}}</td><td>{{tasks[c.task]}}<td>{{c.person}}</td><td>{{c.status}}</td><td><a href="/group/{{group.name}}/history?modstatus={{c.task+c.datetime.strftime('%d%m%Y')}}">Reactivate</a></td>
+	</tr>
+	{% endif %}
+{% endfor %}
+</table><br>
+<a href="/group/{{group.name}}"> Back </a>
+{% endblock %}

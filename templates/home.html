@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block Content %}
+
+	<h1> Welcome to myPutzplaner</h1><br>
+	<div class = "News">
+	{%for comment in comments%}
+		<div class = "News-Box">
+			<div class = "News-Title">{{comment.text | newstitle}}<div class = "News-Date">{{comment.datetime| commentdatetime}}</div></div>
+			<div class = "News-Body"> {{comment.text | newsbody}}</div>
+		</div>
+	{%endfor%}
+	</div>
+
+
+{% endblock %}

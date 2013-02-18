@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% block Title %} {{group.name}} {% endblock %}
+{% block Content %}
+Task-list for {{group.name}}<br>
+<br>
+{% for task in tasks %}
+Name: {{task.name}}<br>
+Description: {{task.description}}<br>
+<a href="/group/{{group.name}}/tasks/edit?name={{task.name}}">Edit this task</a><br>
+<br>
+{% endfor %}
+
+<a href="/group/{{group.name}}/tasks/edit">Add new task</a><br>
+<a href="/group/{{group.name}}">Back To Group</a>
+{% endblock %}

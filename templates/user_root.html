@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+{% block Title %} Welcome {{user.name}} {% endblock %}
+{% block Content %}
+	<h1>Welcome, {{user.name}} !</h1><br>
+	  You are a member of the following groups:<br>
+	<ul>
+	{% for group in user.groups %}
+	<li><a href="/group/{{group}}">{{group}}</a><br></li>
+	{% endfor %}
+	</ul>
+	<a href="/joingroup"> Join existing group</a> <a href="/newgroup">Create new group</a><br><br>
+{% endblock %}

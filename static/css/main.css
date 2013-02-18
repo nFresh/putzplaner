@@ -1,0 +1,225 @@
+body {
+	position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+    width: 1024px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+    background-color: #F9F9DD;
+}
+#content{
+	position: absolute;
+	width: 800px;
+	top: 200px;
+	
+}
+#footer{
+	position: relative;
+	bottom: -200px;
+	left: 650px;
+}
+.Header-User-Area {
+	font-size: 13px;
+	color: gray;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-weight: bold;
+	text-align: right;
+}
+.Header-Groups{
+	font-size: 10px;
+}
+.Header-Join{
+	font-size: 10px;
+}
+
+a {
+	color: #333333;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:VISITED {
+	color: #444444;
+}
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	position: absolute;
+	top: 10px;
+	width: 1024px;
+	
+}
+.title h1 {
+	position: absolute;
+	top: 10px;
+	left: 200px;
+}
+.title img {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 10px;
+	left: 100px;	
+}
+
+.error {
+    color: red;
+}
+
+
+
+label {
+  display: block;
+  font-size: 20px;
+}
+
+label + label {
+    margin-top: 20px;
+}
+
+input[type=text] {
+    width: 500px;
+    font-size: 20px;
+    padding: 2px;
+    font-family: monospace;
+}
+.date{
+	width: 100px;
+}
+
+textarea {
+  width: 500px;
+  height: 400px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+input[type=submit] {
+  font-size: 24px;
+}
+
+.main-title {
+    display: block;
+    color: #222;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.post + .post {
+    margin-top: 15px;
+}
+
+.post-heading {
+    position: relative;
+    border-bottom: 3px solid #666;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-date {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #999;
+
+}
+
+.post-content {
+    margin-top: 5px;
+}
+
+table {
+	table-layout: fixed;
+	border: 1px solid black;
+	border-spacing: 10px;
+	border-collapse: collapse;
+	
+}
+td {
+	border: 1px solid black;
+	border-style: dotted;
+	padding: 5px;
+	
+}
+.tablecolumn {
+	border: 1px solid black;
+	border-style: dotted;
+	
+}
+
+.shoutbox {
+	border : 1px solid black;
+	width: 500px;
+	height: 300px;
+	position: relative;
+	left: 500;
+}
+.shoutbox-content{
+	border: 2px solid #444;
+	display: block;
+	color: #222;
+	font-size: 12px;
+	margin: 2px;
+	height: 265px;
+	overflow:auto;	
+}
+.shoutbox-text{
+	background-color: #FDFD99;
+}
+.shoutbox-text-uneven{
+	background-color: #FDFDDD;
+}
+.shoutbox-name{
+	text-align: right;
+}
+.shoutbox-input{
+	position: absolute;
+	bottom: 0px;
+	left: 10px;
+}
+.shoutbox-input input[type=text]{
+	width: 400px;
+	font-size: 14px;
+}
+.shoutbox-input input[type=submit]{
+	font-size: 14px;
+}
+
+.News-Box{
+	width:400px;
+	height: 200px;
+	position: relative;
+	left: 300px;	
+	margin: 2px;
+}
+.News-Title{
+	border: 1px solid #444;
+	padding: 3px;
+	border-bottom: 5px solid #444;
+}
+.News-Date{
+	position: absolute;
+	right: 5px;
+	top: 3px;
+}
+.News-Body{
+	border:1px solid #444;
+	padding: 5px;
+	height: 100px;
+		
+}

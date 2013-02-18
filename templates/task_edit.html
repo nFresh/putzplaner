@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% block Title %} {{group.name}} {% endblock %}
+{% block Content %}
+<form method="POST">
+			{{errors}} <br>
+           <label> TaskName <input type="text" name="taskname" value="{{taskname}}"></label><br>
+           <label> Description <input type="text" name="description" size="100" value="{{description}}"> </label> <br>
+           <label> intervall(in days) <input type="text" name="intervall" value="{{intervall}}"></label><br>
+           <p> <label> order method<br> <input type="radio" name="ordermethod" value="abcabc" {% if ordermethod!="abccba" %} checked {% endif %}>A B C A B C<br>
+           							 <input type="radio" name="ordermethod" value="abccba"{% if ordermethod=="abccba" %} checked {% endif %}>A B C C B A</label></p><br>
+           <div><label> Next Date (dd/mm/yyyy) </label><input style="width: 50px" type="text" name="day" size="2" maxlenght="2" value="{{day}}"> <input style="width: 50px" type="text" name="month" size="2" maxlenght="2" value="{{month}}"> <input style="width: 50px" type="text" name="year" size="4" maxlenght="4" value="{{year}}"></div>
+           <div>First to do it: <br>{% for member in group.members %} <input type="radio" name="first" value = "{{member}}" {% if member == user.name %} checked {% endif %}> {{member}}<br>{%endfor%}
+           		<input type="radio" name="first" value = "random"> Random
+           </div>
+           <input type="submit"><a href="/group/{{group.name}}/tasks">back to tasklist</a> 
+   </form>
+{% endblock %}
